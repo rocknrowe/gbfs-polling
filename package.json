@@ -1,0 +1,29 @@
+{
+  "name": "gbfs-polling",
+  "version": "1.0.0",
+  "description": "Polling GBFS to get bike locations",
+  "main": "gbfsHome.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocknrowe/gbfs-polling.git"
+  },
+  "keywords": [
+    "GBFS",
+    "bixi"
+  ],
+  "author": "Rowena D'souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rocknrowe/gbfs-polling/issues"
+  },
+  "homepage": "https://github.com/rocknrowe/gbfs-polling#readme",
+  "dependencies": {
+    "https": "^1.0.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "tryjson": "^1.1.4"
+  }
+}
