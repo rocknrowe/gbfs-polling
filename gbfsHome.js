@@ -12,7 +12,7 @@ function mergeInformation(info){
   stationStatusArray = info[1].data.stations;
   var outArr = [];
 
-  stationInfoArray.slice(0,3).forEach(function(value) {
+  stationInfoArray.forEach(function(value) {
       var existing = stationStatusArray.find(function(v, i) {
           return (v.station_id == value.station_id);
       });
