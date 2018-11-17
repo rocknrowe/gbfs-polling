@@ -2,8 +2,6 @@ const getJsonFromUrl = require('./client');
 const redisClient = require('./redisClient');
 
 var url = process.argv[2];
-//var url = 'https://api-core.bixi.com/gbfs/gbfs.json';
-// console.log(url);
 
 function isValue(result, key, value) {
     return result[key].name === value;
@@ -13,7 +11,6 @@ function mergeInformation(info){
   stationInfoArray = info[0].data.stations;
   stationStatusArray = info[1].data.stations;
   var outArr = [];
-
 
   stationInfoArray.slice(0,3).forEach(function(value) {
       var existing = stationStatusArray.find(function(v, i) {
@@ -38,16 +35,13 @@ function mergeInformation(info){
   var o = {};
   var key = 'stations';
   o[key] = outArr;
-
   console.log(JSON.stringify(o));
-
   redisClient.writeToRedis('bixi', JSON.stringify(o));
 }
 
 var callbackGetUrl = function callback(data) {
 
   var result = data.data.en.feeds;
-
   var station_information_key = Object.keys(result)
                                       .filter(key => isValue(result, key,'station_information'));
   var station_status_key = Object.keys(result)

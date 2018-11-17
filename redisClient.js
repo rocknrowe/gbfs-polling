@@ -10,7 +10,6 @@ client.on('error', function (err) {
 });
 
 function writeToRedis(key, value){
-  //logEventListener();
   client.set(key, value, redis.print);
 };
 exports.writeToRedis = writeToRedis;
